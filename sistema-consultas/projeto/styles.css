@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+    background: #f1f5f9;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 18px;
+    margin: 0 auto;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2, h3 {
+    color: #1e293b;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #334155;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 2px solid #cbd5e1;
+    font-size: 16px;
+    background: #f8fafc;
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #3b82f6;
+    background: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.25);
+}
+
+button,
+.btn-blue,
+.btn-delete,
+.navbar a,
+.action-btn {
+    background: #3b82f6;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-block;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover,
+.btn-blue:hover,
+.btn-delete:hover,
+.navbar a:hover,
+.action-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Excluir conta como link azul */
+.delete-account {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.delete-account:hover {
+    text-decoration: underline;
+}
+
+.navbar {
+    width: 100%;
+    background: #ffffff;
+    padding: 20px 40px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 12px;
+}
+
+
+.consultas-wrapper {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.consulta-card {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 14px;
+    border-left: 6px solid #3b82f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.consulta-card:hover {
+    background: #eef2f7;
+    transform: translateY(-2px);
+}
+
+.consulta-card .info p {
+    margin-bottom: 6px;
+    color: #334155;
+    font-size: 15px;
+}
+
+.btn-delete {
+    background: #3b82f6;
+}
+
+.btn-delete:hover {
+    background: #2563eb;
+}
+
+.empty {
+    padding: 20px;
+    text-align: center;
+    background: #f1f5f9;
+    border-radius: 10px;
+    color: #475569;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 25px;
+    }
+
+    .navbar {
+        padding: 15px 25px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .consulta-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    button,
+    .btn-blue,
+    .btn-delete {
+        width: 100%;
+        text-align: center;
+    }
+}
