@@ -16,50 +16,50 @@
     $consultas = $stmt->get_result();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-<div class="navbar">
-    <h2>Minhas Consultas</h2>
-    <div class="nav-actions">
-        <a class="btn-blue" href="marcar_consulta.php">+ Nova Consulta</a>
-        <a class="btn-red" href="logout.php">Sair</a>
+    <div class="navbar">
+        <h2>Minhas Consultas</h2>
+        <div class="nav-actions">
+            <a class="btn-blue" href="marcar_consulta.php">+ Nova Consulta</a>
+            <a class="btn-red" href="logout.php">Sair</a>
+        </div>
     </div>
-</div>
 
-<div class="container">
+    <div class="container">
 
-    <h1>Próximas Consultas</h1>
+        <h1>Próximas Consultas</h1>
 
-    <a class="delete-account" href="deletar_conta.php">Excluir Conta</a>
+        <a class="delete-account" href="deletar_conta.php">Excluir Conta</a>
 
-    <div class="consultas-wrapper">
+        <div class="consultas-wrapper">
 
-        <?php if ($consultas->num_rows == 0): ?>
-            <p class="empty">Nenhuma consulta marcada.</p>
-        <?php endif; ?>
+            <?php if ($consultas->num_rows == 0): ?>
+                <p class="empty">Nenhuma consulta marcada.</p>
+            <?php endif; ?>
 
-        <?php while ($c = $consultas->fetch_assoc()): ?>
-            <div class="consulta-card">
-                <div class="info">
-                    <p><strong>Data:</strong> <?= $c["data_consulta"] ?></p>
-                    <p><strong>Hora:</strong> <?= $c["hora_consulta"] ?></p>
-                    <p><strong>Descrição:</strong> <?= $c["descricao"] ?></p>
+            <?php while ($c = $consultas->fetch_assoc()): ?>
+                <div class="consulta-card">
+                    <div class="info">
+                        <p><strong>Data:</strong> <?= $c["data_consulta"] ?></p>
+                        <p><strong>Hora:</strong> <?= $c["hora_consulta"] ?></p>
+                        <p><strong>Descrição:</strong> <?= $c["descricao"] ?></p>
+                    </div>
+
+                    <a class="btn-delete" href="deletar_consulta.php?id=<?= $c["id"] ?>">
+                        Excluir
+                    </a>
                 </div>
+            <?php endwhile; ?>
 
-                <a class="btn-delete" href="deletar_consulta.php?id=<?= $c["id"] ?>">
-                    Excluir
-                </a>
-            </div>
-        <?php endwhile; ?>
+        </div>
 
     </div>
-
-</div>
-
 </body>
 </html>

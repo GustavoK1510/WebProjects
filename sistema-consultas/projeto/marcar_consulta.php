@@ -32,29 +32,31 @@
     }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcar Consulta</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
+    <div class="container">
 
-    <h2>Marcar Consulta</h2>
+        <h2>Marcar Consulta</h2>
 
-    <form method="POST">
-        <input type="date" name="data" required>
-        <input type="time" name="hora" required>
-        <input type="text" name="descricao" placeholder="Descrição da consulta" required>
+        <form method="POST">
+            <input type="date" name="data" required>
+            <input type="time" name="hora" required>
+            <input type="text" name="descricao" placeholder="Descrição da consulta" required>
 
-        <button type="submit">Salvar</button>
-    </form>
+            <button type="submit">Salvar</button>
+        </form>
 
-    <?php if ($msg): ?>
-        <p style="color:red;"><?= $msg ?></p>
-    <?php endif; ?>
+        <?php if ($msg): ?>
+            <p style="color:red;"><?= $msg ?></p>
+        <?php endif; ?>
 
-    <a href="dashboard.php">Voltar</a>
-
-</div>
+        <a href="dashboard.php">Voltar</a>
+    </div>
 </body>
 </html>
