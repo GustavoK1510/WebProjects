@@ -97,7 +97,6 @@ button:hover,
     transform: translateY(-2px);
 }
 
-/* Excluir conta como link azul */
 .delete-account {
     color: #2563eb;
     font-weight: 600;
